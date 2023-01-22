@@ -1,7 +1,7 @@
 {
-  "name": "my-capri-react-site",
+  "name": "capri-jotai",
   "private": true,
-  "description": "Capri react example",
+  "description": "Shared island state with Jotai",
   "version": "1.0.0",
   "license": "MIT",
   "type": "module",
@@ -13,9 +13,9 @@
   "dependencies": {
     "@vitejs/plugin-react": "^3.0.0",
     "classname-variants": "^1.3.2",
+    "jotai": "^1.13.1",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-router-dom": "^6.3.0"
+    "react-dom": "^18.1.0"
   },
   "devDependencies": {
     "@capri-js/react": "^5.1.0",

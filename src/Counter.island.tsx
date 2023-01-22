@@ -1,21 +1,19 @@
-import { useState } from "react";
 import { styled } from "classname-variants/react";
+import { counterAtom } from "./atoms";
+import { useAtom } from "jotai";
 
-type Props = {
-  start?: number;
-};
-
-export default function Counter({ start = 0 }: Props) {
-  const [counter, setCounter] = useState(start);
+export default function Counter() {
+  const [counter, setCounter] = useAtom(counterAtom);
   return (
-    <div className="flex gap-1">
-      <Button className="bg-green-600" onClick={() => setCounter((c) => c - 1)}>
-        -
-      </Button>
+    <div className="inline-flex gap-1">
+      <Button onClick={() => setCounter((c) => c - 1)}>-</Button>
       <span>{counter}</span>
       <Button onClick={() => setCounter((c) => c + 1)}>+</Button>
     </div>
   );
 }
 
-const Button = styled("button", "rounded bg-green-600 text-white px-2");
+const Button = styled(
+  "button",
+  "rounded bg-teal-700 hover:bg-teal-500 text-white px-2"
+);
