@@ -1,6 +1,7 @@
 import CounterIsland from "./Counter.island.jsx";
 import "./App.css";
 import { Footer } from "./Footer.jsx";
+import CounterDisplay from "./CounterDisplay.island.jsx";
 
 export function App() {
   return (
@@ -9,12 +10,12 @@ export function App() {
         Share state across Capri islands with{" "}
         <a href="https://jotai.org">Jotai</a> 👻
       </h1>
-      <p>
+      <section>
         Here is an island with a counter: <CounterIsland />
-      </p>
-      <p>
-        And here a second island, that shares the same state: <CounterIsland />
-      </p>
+      </section>
+      <section>
+        And here a second island, that shares the same state: <CounterDisplay />
+      </section>
       <Footer />
     </main>
   );

@@ -1,6 +1,6 @@
 import { styled } from "classname-variants/react";
-import { counterAtom } from "./atoms";
 import { useAtom } from "jotai";
+import { counterAtom } from "./atoms";
 
 export default function Counter() {
   const [counter, setCounter] = useAtom(counterAtom);
