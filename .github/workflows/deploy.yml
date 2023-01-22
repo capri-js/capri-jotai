@@ -20,14 +20,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - id: configure-pages
+        uses: actions/configure-pages@v2
       - uses: actions/setup-node@v3
         with:
           node-version: "16"
       - run: npm install
       - run: npm run build
         env:
-          BASE_URL: /${{ github.event.repository.name }}
-      - uses: actions/configure-pages@v2
+          BASE_URL: ${{ steps.configure-pages.outputs.base_path }}
       - uses: actions/upload-pages-artifact@v1
         with:
           path: ./dist
@@ -39,4 +40,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/deploy-pages@v1
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
